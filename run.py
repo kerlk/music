@@ -132,7 +132,7 @@ def main():
                     modules = [i for i in orpheus.module_list if ModuleFlags.hidden not in orpheus.module_settings[i].flags]
                     raise Exception(f'Unknown module name "{modulename}". Must select from: {", ".join(modules)}') # TODO: replace with InvalidModuleError
             else:
-                print(f'Search must be done as orpheus.py [search/luckysearch] [module] [{media_types}] [query]')
+                print(f'Search must be done as run.py [search/luckysearch] [module] [{media_types}] [query]')
                 exit() # TODO: replace with InvalidInput
         elif orpheus_mode == 'download':
             if len(args.arguments) > 3:
@@ -147,7 +147,7 @@ def main():
                     modules = [i for i in orpheus.module_list if ModuleFlags.hidden not in orpheus.module_settings[i].flags]
                     raise Exception(f'Unknown module name "{modulename}". Must select from: {", ".join(modules)}') # TODO: replace with InvalidModuleError
             else:
-                print(f'Download must be done as orpheus.py [download] [module] [{media_types}] [media ID 1] [media ID 2] ...')
+                print(f'Download must be done as run.py [download] [module] [{media_types}] [media ID 1] [media ID 2] ...')
                 exit() # TODO: replace with InvalidInput
         else:  # if no specific modes are detected, parse as urls, but first try loading as a list of URLs
             arguments = tuple(open(args.arguments[0], 'r')) if len(args.arguments) == 1 and os.path.exists(args.arguments[0]) else args.arguments
