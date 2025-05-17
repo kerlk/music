@@ -1,3 +1,4 @@
+requests
 pygments>=2.19.1
 defusedxml>=0.7.1
 protobuf==3.15.8
